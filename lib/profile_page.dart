@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_photo/widgets/prof_desc.dart';
 import 'package:profile_photo/widgets/prof_pic.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -23,7 +24,22 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             ProfilePicture(),
             SizedBox(height: 20),
-            Text('Profile Details')
+            ProfileDescription(
+              icon: Icon(Icons.person), 
+              title: 'Name', 
+              data: 'Anita Max Wynn'
+            ),
+            ProfileDescription(
+              icon: Icon(Icons.email), 
+              title: 'Email', 
+              data: 'anitamax@gmail.com'
+            ),
+            SizedBox(height: 20),
+            ProfileDescription(
+              icon: Icon(Icons.phone), 
+              title: 'Phone Number', 
+              data: '+254769566055'
+            ),
           ],
         ),
         ),
