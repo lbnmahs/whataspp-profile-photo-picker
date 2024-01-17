@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:profile_photo/photo_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'WhatsApp Profile Photo',
       theme: theme,
-      home: const Text('Hello'),
+      home: const ProfilePage(),
     );
   }
 }
