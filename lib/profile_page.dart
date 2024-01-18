@@ -25,18 +25,18 @@ class _ProfilePageState extends State<ProfilePage> {
             ProfilePicture(),
             SizedBox(height: 20),
             ProfileDescription(
-              icon: Icon(Icons.person), 
+              icon: Icons.person, 
               title: 'Name', 
               data: 'Anita Max Wynn'
             ),
             ProfileDescription(
-              icon: Icon(Icons.email), 
+              icon: Icons.email, 
               title: 'Email', 
               data: 'anitamax@gmail.com'
             ),
             SizedBox(height: 20),
             ProfileDescription(
-              icon: Icon(Icons.phone), 
+              icon: Icons.phone, 
               title: 'Phone Number', 
               data: '+254769566055'
             ),

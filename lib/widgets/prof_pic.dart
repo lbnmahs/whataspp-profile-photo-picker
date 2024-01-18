@@ -14,12 +14,13 @@ class _ProfilePictureState extends State<ProfilePicture> {
     return  Center(
       child: Stack(
         children: [
-          const CircleAvatar(
-            backgroundColor: Colors.blue,
-            radius: 80,
+          CircleAvatar(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            radius: 95,
           ),
           Positioned(
             bottom: 0, right: 0,
+            // set the icon button background color to green
             child: IconButton.filled(
               onPressed: () {}, 
               icon: const Icon(Icons.camera_alt), 

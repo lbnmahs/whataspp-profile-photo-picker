@@ -1,29 +1,38 @@
 import 'package:flutter/material.dart';
 
-class Description {
-  const Description({
-    required this.icon,
-    required this.title,
-    required this.data
-  });
-
-  final Icon icon;
-  final String title;
-  final String data;
-}
-
 class ProfileDescription extends StatelessWidget {
   const ProfileDescription({ super.key, required this.icon, required this.title, required this.data });
-  final Icon icon;
+  final IconData icon;
   final String title;
   final String data;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: icon,
-      title: Text(title),
-      subtitle: Text(data),
+      leading: Icon(
+        icon,
+        color: Theme.of(context).colorScheme.primary,
+      ),
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+          color: Theme.of(context).colorScheme.primary,
+          fontSize: 12,
+          fontWeight: FontWeight.bold
+        ),
+      ),
+      subtitle: Text(
+        data,
+        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+          color: Theme.of(context).colorScheme.onBackground,
+          fontWeight: FontWeight.w300,
+          fontSize: 16
+        ),
+      ),
+      trailing: Icon(
+        Icons.edit,
+        color: Theme.of(context).colorScheme.primary,
+      ),
     );
   }
 }

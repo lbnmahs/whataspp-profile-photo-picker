@@ -8,8 +8,8 @@ void main() {
 
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
-  seedColor: Colors.blueGrey.shade500,
-  background: Colors.blueGrey.shade900
+  seedColor: Colors.greenAccent,
+  background: Colors.blueGrey
 );
 
 final theme = ThemeData().copyWith(
