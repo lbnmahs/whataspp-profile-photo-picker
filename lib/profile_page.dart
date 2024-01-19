@@ -29,12 +29,20 @@ class _ProfilePageState extends State<ProfilePage> {
               title: 'Name', 
               data: 'Anita Max Wynn'
             ),
+            // a line
+            Divider(
+              color: Color.fromARGB(255, 57, 88, 102),
+              thickness: 1,
+            ),
             ProfileDescription(
               icon: Icons.email, 
               title: 'Email', 
               data: 'anitamax@gmail.com'
             ),
-            SizedBox(height: 20),
+            Divider(
+              color: Color.fromARGB(255, 57, 88, 102),
+              thickness: 1,
+            ),
             ProfileDescription(
               icon: Icons.phone, 
               title: 'Phone Number', 

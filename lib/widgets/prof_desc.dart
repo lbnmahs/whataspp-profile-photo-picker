@@ -11,12 +11,12 @@ class ProfileDescription extends StatelessWidget {
     return ListTile(
       leading: Icon(
         icon,
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
       ),
       title: Text(
         title,
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.onBackground.withOpacity(0.5),
           fontSize: 12,
           fontWeight: FontWeight.bold
         ),
@@ -25,7 +25,7 @@ class ProfileDescription extends StatelessWidget {
         data,
         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           color: Theme.of(context).colorScheme.onBackground,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w200,
           fontSize: 16
         ),
       ),

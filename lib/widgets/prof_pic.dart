@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_photo/widgets/choice_modal.dart';
 
 class ProfilePicture extends StatefulWidget {
   const ProfilePicture({super.key});
@@ -9,6 +10,12 @@ class ProfilePicture extends StatefulWidget {
 }
 
 class _ProfilePictureState extends State<ProfilePicture> {
+  void _showModal () {
+    showModalBottomSheet(
+      context: context, 
+      builder: (ctx) => const ChoiceModal()
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return  Center(
@@ -22,7 +29,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
             bottom: 0, right: 0,
             // set the icon button background color to green
             child: IconButton.filled(
-              onPressed: () {}, 
+              onPressed: _showModal, 
               icon: const Icon(Icons.camera_alt), 
               padding: const EdgeInsets.all(5),
             ),
