@@ -22,7 +22,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
       child: Stack(
         children: [
           CircleAvatar(
-            backgroundColor: Theme.of(context).colorScheme.primary,
+            backgroundColor: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
             radius: 95,
           ),
           Positioned(

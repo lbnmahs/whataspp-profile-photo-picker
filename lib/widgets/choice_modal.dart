@@ -11,14 +11,24 @@ class ChoiceModal extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Profile Photo',
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: Theme.of(context).colorScheme.onBackground,
-              fontSize: 18
-            ),
+          Row(
+            children: [
+              Text(
+                'Profile Photo',
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontSize: 18
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                onPressed: () {}, 
+                icon: const Icon(Icons.delete),
+                color: Theme.of(context).colorScheme.onBackground.withOpacity(0.6),
+              )
+            ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
