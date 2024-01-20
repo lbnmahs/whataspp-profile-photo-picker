@@ -32,7 +32,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
         children: [
           CircleAvatar(
             backgroundImage: _selectedImage == null 
-              ? const NetworkImage('https://rb.gy/frfz6p') 
+              ? const NetworkImage('https://rb.gy/wbc0ox') 
               : FileImage(_selectedImage!) as ImageProvider<Object>?,
             radius: 95,
           ),
