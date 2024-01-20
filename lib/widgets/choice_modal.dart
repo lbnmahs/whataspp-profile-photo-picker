@@ -4,9 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ChoiceModal extends StatefulWidget {
-  const ChoiceModal({ super.key, required this.onImageSelect });
+  const ChoiceModal({ 
+    super.key, 
+    required this.selectedImage,
+    required this.onImageSelect , 
+    required this.onImageDelete
+  });
 
+  final File? selectedImage;
   final void Function(File pic) onImageSelect;
+  final void Function() onImageDelete;
 
   @override
   State<ChoiceModal> createState() => _ChoiceModalState();
@@ -14,6 +21,12 @@ class ChoiceModal extends StatefulWidget {
 
 class _ChoiceModalState extends State<ChoiceModal> {
   File? _selectedImage;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedImage = widget.selectedImage;
+  }
 
   void _selectImage(ImageSource source) async {
     final image = await ImagePicker().pickImage(source: source);
@@ -48,7 +61,12 @@ class _ChoiceModalState extends State<ChoiceModal> {
               ),
               const Spacer(),
               IconButton(
-                onPressed: () {}, 
+                onPressed: _selectedImage != null 
+                  ? () { 
+                    widget.onImageDelete();
+                    Navigator.of(context).pop();
+                  } 
+                  : Navigator.of(context).pop, 
                 icon: const Icon(Icons.delete),
                 color: Theme.of(context).colorScheme.onBackground.withOpacity(0.6),
               )

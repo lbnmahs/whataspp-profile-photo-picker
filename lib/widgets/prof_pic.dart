@@ -18,9 +18,15 @@ class _ProfilePictureState extends State<ProfilePicture> {
     showModalBottomSheet(
       context: context, 
       builder: (ctx) =>  ChoiceModal(
+        selectedImage: _selectedImage,
         onImageSelect: (image) {
           setState(() {
             _selectedImage = image;
+          });
+        },
+        onImageDelete: () {
+          setState(() {
+            _selectedImage = null;
           });
         },
       )
