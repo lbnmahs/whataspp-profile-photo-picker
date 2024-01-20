@@ -19,7 +19,9 @@ class _ProfilePictureState extends State<ProfilePicture> {
       context: context, 
       builder: (ctx) =>  ChoiceModal(
         onImageSelect: (image) {
-          _selectedImage = image;
+          setState(() {
+            _selectedImage = image;
+          });
         },
       )
     );
