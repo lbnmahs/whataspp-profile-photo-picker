@@ -1,7 +1,33 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class ChoiceModal extends StatelessWidget {
-  const ChoiceModal({ super.key });
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ChoiceModal extends StatefulWidget {
+  const ChoiceModal({ super.key, required this.onImageSelect });
+
+  final void Function(File pic) onImageSelect;
+
+  @override
+  State<ChoiceModal> createState() => _ChoiceModalState();
+}
+
+class _ChoiceModalState extends State<ChoiceModal> {
+  File? _selectedImage;
+
+  void _selectImage(ImageSource source) async {
+    final image = await ImagePicker().pickImage(source: source);
+    if(image == null) return;
+
+    if(!context.mounted) return;
+    Navigator.of(context).pop();
+
+    setState(() {
+      _selectedImage = File(image.path);
+    });
+
+    widget.onImageSelect(_selectedImage!);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +61,7 @@ class ChoiceModal extends StatelessWidget {
               IconButton.filledTonal(
                 isSelected: false,
                 iconSize: 25,
-                onPressed: () {}, 
+                onPressed: () => _selectImage(ImageSource.camera),
                 icon: Icon(
                   Icons.camera_alt, 
                   color: Theme.of(context).colorScheme.primary
@@ -46,7 +72,7 @@ class ChoiceModal extends StatelessWidget {
               IconButton.filledTonal(
                 isSelected: false,
                 iconSize: 25,
-                onPressed: () {}, 
+                onPressed: () => _selectImage(ImageSource.gallery), 
                 icon: Icon(
                   Icons.photo,
                   color: Theme.of(context).colorScheme.primary

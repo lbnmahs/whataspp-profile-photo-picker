@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:profile_photo/widgets/choice_modal.dart';
 
@@ -10,24 +12,32 @@ class ProfilePicture extends StatefulWidget {
 }
 
 class _ProfilePictureState extends State<ProfilePicture> {
+  File? _selectedImage;
+
   void _showModal () {
     showModalBottomSheet(
       context: context, 
-      builder: (ctx) => const ChoiceModal()
+      builder: (ctx) =>  ChoiceModal(
+        onImageSelect: (image) {
+          _selectedImage = image;
+        },
+      )
     );
   }
+  
   @override
   Widget build(BuildContext context) {
     return  Center(
       child: Stack(
         children: [
           CircleAvatar(
-            backgroundColor: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
+            backgroundImage: _selectedImage == null 
+              ? const NetworkImage('https://rb.gy/frfz6p') 
+              : FileImage(_selectedImage!) as ImageProvider<Object>?,
             radius: 95,
           ),
           Positioned(
             bottom: 0, right: 0,
-            // set the icon button background color to green
             child: IconButton.filled(
               onPressed: _showModal, 
               icon: const Icon(Icons.camera_alt), 
