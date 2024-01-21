@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:profile_photo/profile_page.dart';
+import 'package:profile_photo/screens/profile_info_screen.dart';
 
 void main() {
   runApp(const MyApp());

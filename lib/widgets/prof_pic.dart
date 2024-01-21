@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:profile_photo/widgets/choice_modal.dart';
 
@@ -14,6 +13,7 @@ class ProfilePicture extends StatefulWidget {
 class _ProfilePictureState extends State<ProfilePicture> {
   File? _selectedImage;
 
+  // Function to open up the bottom modal
   void _showModal () {
     showModalBottomSheet(
       context: context, 
@@ -40,7 +40,9 @@ class _ProfilePictureState extends State<ProfilePicture> {
         children: [
           CircleAvatar(
             backgroundImage: _selectedImage == null 
+              // No profile picture image
               ? const NetworkImage('https://rb.gy/wbc0ox') 
+              // Profile picture image from camera or gallery
               : FileImage(_selectedImage!) as ImageProvider<Object>?,
             radius: 95,
           ),
