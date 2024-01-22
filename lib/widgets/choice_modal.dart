@@ -27,6 +27,8 @@ class _ChoiceModalState extends State<ChoiceModal> {
     _selectedImage = widget.selectedImage;
   }
 
+  // Function to pick image from either the camera or gallery
+  // and display it on the avatar.
   void _selectImage(ImageSource source) async {
     final image = await ImagePicker().pickImage(source: source);
     if(image == null) return;
