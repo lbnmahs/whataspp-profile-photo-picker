@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:profile_photo/screens/photo_screen.dart';
 import 'package:profile_photo/widgets/choice_modal.dart';
 
 class ProfilePicture extends StatefulWidget {
@@ -32,19 +33,52 @@ class _ProfilePictureState extends State<ProfilePicture> {
       )
     );
   }
+
+  void _avatarSelect() {
+    if( _selectedImage == null ) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title:  const Text('Profile Photo'),
+            content: const Text('Please add a profile photo'),
+            actionsAlignment: MainAxisAlignment.center,
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(), 
+                child: const Text('Okay')
+              )
+            ],
+          );
+        }
+      );
+    }else {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => PhotoScreen(
+            profileImage: _selectedImage!
+          )
+        )
+      );
+    }
+
+  }
   
   @override
   Widget build(BuildContext context) {
     return  Center(
       child: Stack(
         children: [
-          CircleAvatar(
-            backgroundImage: _selectedImage == null 
-              // No profile picture image
-              ? const NetworkImage('https://rb.gy/wbc0ox') 
-              // Profile picture image from camera or gallery
-              : FileImage(_selectedImage!) as ImageProvider<Object>?,
-            radius: 95,
+          InkWell(
+            onTap: _avatarSelect,
+            child: CircleAvatar(
+              backgroundImage: _selectedImage == null 
+                // No profile picture image
+                ? const NetworkImage('https://rb.gy/wbc0ox') 
+                // Profile picture image from camera or gallery
+                : FileImage(_selectedImage!) as ImageProvider<Object>?,
+              radius: 95,
+            ),
           ),
           Positioned(
             bottom: 0, right: 0,
