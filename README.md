@@ -1,16 +1,38 @@
-# profile_photo
+# WhatsApp Profile Page Clone
 
-A new Flutter project.
+This is a clone of WhatsApp's Profile Page aiming to show how one can implement an image picker.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run the application, run the following commands
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository
+    ```git
+       git clone https://github.com/lbnmahs/whatsapp-profile-photo-picker.git
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Change the directory
+    ```git
+       cd whatsapp-profile-photo-picker
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Install dependecies
+    ```dart
+       flutter pub add image_picker
+    ```
+
+4. Run the application
+    ```dart
+       flutter run
+    ```
+## Contributing
+
+Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request.
+
+
+## Acknowledgements
+
+* Flutter, an open-source UI software development toolkit, developed this app.
+
+Happy Coding 🚀
