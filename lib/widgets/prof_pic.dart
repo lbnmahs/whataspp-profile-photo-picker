@@ -34,6 +34,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
     );
   }
 
+  // Function to view profile photo
   void _avatarSelect() {
     if( _selectedImage == null ) { return; } else {
       Navigator.of(context).push(
@@ -44,7 +45,6 @@ class _ProfilePictureState extends State<ProfilePicture> {
         )
       );
     }
-
   }
   
   @override
