@@ -1,7 +1,9 @@
 # WhatsApp Profile Page Clone
 
 This is a clone of WhatsApp's Profile Page aiming to show how one can implement an image picker.
+-Picking an image from the gallery.
 ![demo1-gallery-picking](https://github.com/lbnmahs/whatsapp-profile-photo-picker/blob/main/demo1.gif)
+-Taking a photo using the camera.
 ![demo2-camera-picking](https://github.com/lbnmahs/whatsapp-profile-photo-picker/blob/main/demo2.gif)
 
 ## Getting Started
@@ -18,7 +20,7 @@ To run the application, run the following commands
        cd whatsapp-profile-photo-picker
     ```
 
-3. Install dependecies
+3. Install dependencies
     ```dart
        flutter pub add image_picker
     ```
