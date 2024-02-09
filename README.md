@@ -1,9 +1,12 @@
 # WhatsApp Profile Page Clone
 
-This is a clone of WhatsApp's Profile Page aiming to show how one can implement an image picker.
--Picking an image from the gallery.
-![demo1-gallery-picking](https://github.com/lbnmahs/whatsapp-profile-photo-picker/blob/main/demo1.gif)
--Taking a photo using the camera.
+This is a clone of WhatsApp's Profile Page aiming to show how one can implement an image picker.<br>
+<br>
+<br>
+Picking an image from the gallery.<br>
+![demo1-gallery-picking](https://github.com/lbnmahs/whatsapp-profile-photo-picker/blob/main/demo1.gif).<br>
+<br>
+Taking a photo using the camera.<br>
 ![demo2-camera-picking](https://github.com/lbnmahs/whatsapp-profile-photo-picker/blob/main/demo2.gif)
 
 ## Getting Started
