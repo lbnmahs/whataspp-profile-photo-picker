@@ -22,7 +22,7 @@ To run the application, run the following commands
 
 3. Install dependencies
     ```dart
-       flutter pub add image_picker
+       flutter pub get
     ```
 
 4. Run the application
